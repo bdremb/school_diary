@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -17,8 +16,8 @@ public class User {
   @Column(name = "username", nullable = false)
   private String name;
 
-  @Column(name = "reg_time")
-  private LocalDateTime time;
+  @Column(name = "password", nullable = false)
+  private String password;
 
   @Column(name = "enabled")
   private boolean enabled;

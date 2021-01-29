@@ -25,10 +25,9 @@ public class UserService {
     Iterable<User> postIterable = userRepository.findAll();
     for (User user : postIterable) {
       users.add(user);
-         }
+    }
     User test = new User();
     test.setName("Test");
-    test.setTime(LocalDateTime.now());
     users.add(test);
     return users;
   }

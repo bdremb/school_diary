@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0/1
+      author: bdremb (generated)
+      comment: "Add some data"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "user"
+              - column:
+                  name: password
+                  value: "{noop}user"
+              - column:
+                  name: enabled
+                  value: "1"
+  - changeSet:
+      id: 1.0/2
+      author: bdremb (generated)
+      comment: "Add some data to authorities"
+      changes:
+        - insert:
+            tableName: authorities
+            columns:
+              - column:
+                  name: username
+                  value: "user"
+              - column:
+                  name: authority
+                  value: "TEACHER"
+  - changeSet:
+      id: 2.0/3
+      author: bdremb (generated)
+      comment: "Add some data"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "boy"
+              - column:
+                  name: password
+                  value: "{noop}boy"
+              - column:
+                  name: enabled
+                  value: "1"
+  - changeSet:
+      id: 2.0/4
+      author: bdremb (generated)
+      comment: "Add some data to authorities"
+      changes:
+        - insert:
+            tableName: authorities
+            columns:
+              - column:
+                  name: username
+                  value: "boy"
+              - column:
+                  name: authority
+                  value: "SCHOOLBOY"

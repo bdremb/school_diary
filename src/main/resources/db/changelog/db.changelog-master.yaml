@@ -96,8 +96,8 @@ databaseChangeLog:
                     nullable: false
 
   - changeSet:
-      id: 1611440312838-17
-      author: bdrem (generated)
+      id: 13579-1
+      author: bdremb (generated)
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: username
@@ -109,4 +109,5 @@ databaseChangeLog:
             onUpdate: RESTRICT
             referencedColumnNames: username
             referencedTableName: users
-
+  - include:
+      file: db/changelog/db.somedata.yaml
