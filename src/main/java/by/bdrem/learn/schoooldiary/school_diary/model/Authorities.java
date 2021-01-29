@@ -1,6 +1,6 @@
 package by.bdrem.learn.schoooldiary.school_diary.model;
 
-import by.bdrem.learn.schoooldiary.school_diary.role.UserRole;
+import by.bdrem.learn.schoooldiary.school_diary.role.Role;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -22,6 +22,6 @@ public class Authorities {
   @Column(name = "authority",
       columnDefinition = "enum('SCHOOLBOY', 'PARENT', 'TEACHER')", nullable = false)
   @Enumerated(value = EnumType.STRING)
-  private UserRole authority;
+  private Role authority;
 
 }

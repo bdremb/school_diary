@@ -58,7 +58,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: authority
-                  type: ENUM('SCHOOLBOY', 'PARENT', 'TEACHER')
+                  type: ENUM('ROLE_SCHOOLBOY', 'ROLE_PARENT', 'ROLE_TEACHER')
                   constraints:
                     nullable: false
   - changeSet:

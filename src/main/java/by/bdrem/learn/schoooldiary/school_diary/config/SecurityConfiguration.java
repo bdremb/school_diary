@@ -6,35 +6,42 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
 
 import javax.sql.DataSource;
 
-import static by.bdrem.learn.schoooldiary.school_diary.role.UserRole.PARENT;
-import static by.bdrem.learn.schoooldiary.school_diary.role.UserRole.SCHOOLBOY;
-import static by.bdrem.learn.schoooldiary.school_diary.role.UserRole.TEACHER;
+import static by.bdrem.learn.schoooldiary.school_diary.role.Role.PARENT;
+import static by.bdrem.learn.schoooldiary.school_diary.role.Role.SCHOOLBOY;
+import static by.bdrem.learn.schoooldiary.school_diary.role.Role.TEACHER;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+  private final DataSource dataSource;
+
   @Autowired
-  DataSource dataSource;
+  public SecurityConfiguration(DataSource dataSource) {
+    this.dataSource = dataSource;
+  }
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.jdbcAuthentication().dataSource(dataSource);
-
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.csrf().disable()
+    http
         .authorizeRequests()
-        .antMatchers("/", "/login").hasAnyRole(SCHOOLBOY.getRole(), PARENT.getRole(), TEACHER.getRole())
-        .antMatchers("/parent_info").hasAnyRole(PARENT.getRole())
-        .antMatchers("/**").hasAnyRole(TEACHER.getRole())
+        .antMatchers("/").permitAll()
+        .antMatchers("/parent_info").hasRole(PARENT.get())
+        .antMatchers("/schoolboy_info").hasAnyRole(SCHOOLBOY.get(), PARENT.get())
+        .antMatchers("/teacher_info").hasRole(TEACHER.get())
         .and()
         .formLogin()
+        .permitAll()
+        .and()
+        .logout()
         .permitAll();
   }
 }

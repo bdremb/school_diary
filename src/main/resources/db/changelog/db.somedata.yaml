@@ -29,7 +29,7 @@ databaseChangeLog:
                   value: "user"
               - column:
                   name: authority
-                  value: "TEACHER"
+                  value: "ROLE_TEACHER"
   - changeSet:
       id: 2.0/3
       author: bdremb (generated)
@@ -60,4 +60,36 @@ databaseChangeLog:
                   value: "boy"
               - column:
                   name: authority
-                  value: "SCHOOLBOY"
+                  value: "ROLE_SCHOOLBOY"
+
+  - changeSet:
+      id: 3.0/5
+      author: bdremb (generated)
+      comment: "Add some data"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: "mama"
+              - column:
+                  name: password
+                  value: "{noop}mama"
+              - column:
+                  name: enabled
+                  value: "1"
+  - changeSet:
+      id: 3.0/6
+      author: bdremb (generated)
+      comment: "Add some data to authorities"
+      changes:
+        - insert:
+            tableName: authorities
+            columns:
+              - column:
+                  name: username
+                  value: "mama"
+              - column:
+                  name: authority
+                  value: "ROLE_PARENT"
