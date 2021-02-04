@@ -23,5 +23,4 @@ public class Authorities {
       columnDefinition = "enum('SCHOOLBOY', 'PARENT', 'TEACHER')", nullable = false)
   @Enumerated(value = EnumType.STRING)
   private Role authority;
-
 }

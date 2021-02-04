@@ -31,6 +31,4 @@ public class Person {
 
   @Column(name = "reg_time")
   private LocalDateTime time;
-
-
 }
