@@ -1,6 +1,5 @@
 package by.bdrem.learn.schoooldiary.school_diary.model;
 
-import by.bdrem.learn.schoooldiary.school_diary.role.Role;
 import lombok.Data;
 
 import javax.persistence.Column;

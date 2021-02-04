@@ -26,9 +26,19 @@ public class Person {
   @Column(name = "surname")
   private String surname;
 
+  @Column(name = "email")
+  private String email;
+
+  @Column(name = "password")
+  private String password;
+
   @Column(name = "number_class")
   private int numberClass;
 
   @Column(name = "reg_time")
   private LocalDateTime time;
+
+  public Role getRole() {
+    return numberClass == 0 ? Role.MODERATOR : Role.USER;
+  }
 }

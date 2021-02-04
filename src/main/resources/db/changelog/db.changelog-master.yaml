@@ -80,21 +80,30 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: email
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
                   name: surname
                   type: VARCHAR(50)
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: number_class
                   type: INT
                   constraints:
-                    nullable: false
+                    nullable: true
               - column:
                   name: reg_time
                   type: datetime
                   constraints:
-                    nullable: false
-
+                    nullable: true
   - changeSet:
       id: 13579-1
       author: bdremb (generated)

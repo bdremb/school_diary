@@ -93,3 +93,55 @@ databaseChangeLog:
               - column:
                   name: authority
                   value: "ROLE_PARENT"
+  - changeSet:
+      id: 4.0/1
+      author: bdremb (generated)
+      comment: "Add some data to authorities"
+      changes:
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "user"
+              - column:
+                  name: email
+                  value: "user@user.com"
+              - column:
+                  name: surname
+                  value: "serov"
+              - column:
+                  name: number_class
+                  value: "9"
+              - column:
+                  name: password
+                  value: "$2y$12$JdpQFpO3/cIVX0xjhL3gQ.UnRStue9ugKeXpHVbpJJ8IL4H8VK3Ui"
+  - changeSet:
+      id: 4.0/2
+      author: bdremb (generated)
+      comment: "Add some data to authorities"
+      changes:
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: name
+                  value: "moder"
+              - column:
+                  name: email
+                  value: "moder@moder.com"
+              - column:
+                  name: surname
+                  value: "roderov"
+              - column:
+                  name: number_class
+                  value: "0"
+              - column:
+                  name: password
+                  value: "$2y$12$picoZIrruqkMzXiQAcjptuA2.d.THHYBOaRRegHcOBxeuLlqEHS/q"
